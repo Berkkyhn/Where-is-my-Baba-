@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Where is my Baba?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header, section, footer {
+            margin: 20px;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        section {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Where is my Baba?</h1>
+    </header>
+
+    <section id="questionSection">
+        <h2>Question Section</h2>
+        <button onclick="askWhereIsBaba()">Where is my Baba?</button>
+        <p id="response"></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Where is my Baba?</p>
+    </footer>
+
+    <script>
+        function askWhereIsBaba() {
+            var firstQuestion = prompt("Is your Baba in front of you? (Yes/No)").toLowerCase();
+            
+            if (firstQuestion === "yes") {
+                document.getElementById("response").innerText = "Right in front of you!";
+            } else if (firstQuestion === "no") {
+                var secondQuestion = prompt("Can you hear your Baba? (Yes/No)").toLowerCase();
+                
+                if (secondQuestion === "yes") {
+                    document.getElementById("response").innerText = "Ask him where he is!";
+                } else if (secondQuestion === "no") {
+                    var thirdQuestion = prompt("If you call your Baba's name, does he answer back? (Yes/No)").toLowerCase();
+                    
+                    if (thirdQuestion === "yes") {
+                        document.getElementById("response").innerText = "Ask him where he is!";
+                    } else if (thirdQuestion === "no") {
+                        var fourthQuestion = prompt("Have you checked the living room? (Yes/No)").toLowerCase();
+                        
+                        if (fourthQuestion === "yes") {
+                            document.getElementById("response").innerText = "Your Baba might be hiding well!";
+                        } else if (fourthQuestion === "no") {
+                            document.getElementById("response").innerText = "Go check the living room, your Baba might be there!";
+                        } else {
+                            document.getElementById("response").innerText = "Invalid response. Please answer with 'Yes' or 'No'.";
+                        }
+                    } else {
+                        document.getElementById("response").innerText = "Invalid response. Please answer with 'Yes' or 'No'.";
+                    }
+                } else {
+                    document.getElementById("response").innerText = "Invalid response. Please answer with 'Yes' or 'No'.";
+                }
+            } else {
+                document.getElementById("response").innerText = "Invalid response. Please answer with 'Yes' or 'No'.";
+            }
+        }
+    </script>
+
+</body>
+</html>
